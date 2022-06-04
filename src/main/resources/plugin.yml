@@ -1,0 +1,7 @@
+name: Mecha
+version: '${project.version}'
+main: me.oliver193.mecha.Mecha
+api-version: 1.18
+authors: [ oliver193 ]
+description: Mecha Plugin
+website: https://github.com/oliver193/Mecha-Plugin
