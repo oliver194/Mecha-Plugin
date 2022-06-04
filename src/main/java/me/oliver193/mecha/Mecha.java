@@ -13,6 +13,7 @@ public class Mecha extends JavaPlugin {
     }
 
     public void onEnable() {
+        // Enable plugin
         getLogger().info("Mecha is loading.");
 
         // Load commands
@@ -22,6 +23,7 @@ public class Mecha extends JavaPlugin {
     }
 
     public void onDisable() {
+        // Disable plugin
         getLogger().info("Mecha is disabling.");
     }
 
