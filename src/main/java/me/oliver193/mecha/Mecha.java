@@ -1,24 +1,32 @@
 package me.oliver193.mecha;
 
-import me.oliver193.mecha.Commands.Feed;
-import me.oliver193.mecha.Commands.Heal;
+import me.oliver193.mecha.commands.FeedCommand;
+import me.oliver193.mecha.commands.HealCommand;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Mecha extends JavaPlugin {
+
     private static Mecha instance;
 
-    public void onEnable() {
+    public void onLoad() {
         instance = this;
-        getLogger().info("Mecha version " + getDescription().getVersion() + " is loading");
-        new Heal();
-        new Feed();
+    }
+
+    public void onEnable() {
+        getLogger().info("Mecha is loading.");
+
+        // Load commands
+        getCommand("heal").setExecutor(new HealCommand());
+        getCommand("feed").setExecutor(new FeedCommand());
+
     }
 
     public void onDisable() {
-        getLogger().info("Mecha version " + getDescription().getVersion() + " is disabling.");
+        getLogger().info("Mecha is disabling.");
     }
 
     public static Mecha getInstance() {
         return instance;
     }
+
 }

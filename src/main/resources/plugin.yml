@@ -5,3 +5,12 @@ api-version: 1.18
 authors: [ oliver193 ]
 description: Mecha Plugin
 website: https://github.com/oliver193/Mecha-Plugin
+commands:
+  heal:
+    permission: mecha.heal
+    description: Heal yourself.
+    usage: /heal
+  feed:
+    permission: mecha.feed
+    description: Feed yourself.
+    usage: /feed
