@@ -6,11 +6,13 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.UUID;
 
 public class FlyCommand implements CommandExecutor {
 
-    private ArrayList<Player> list_of_flying_players = new ArrayList<>();
+    private final Set<UUID> flyingPlayers = new HashSet<>();
     @Override
 
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
@@ -21,12 +23,12 @@ public class FlyCommand implements CommandExecutor {
 
         Player player = (Player) commandSender;
         // Enable/disable fly mode
-        if (list_of_flying_players.contains(player)){
-            list_of_flying_players.remove(player);
+        if (flyingPlayers.contains(player.getUniqueId())){
+            flyingPlayers.remove(player.getUniqueId());
             player.setAllowFlight(false);
             Msg.send(player, "&cFlight has been disabled.");
-        }else if(!list_of_flying_players.contains(player)) {
-            list_of_flying_players.add(player);
+        }else if(!flyingPlayers.contains(player.getUniqueId())) {
+            flyingPlayers.add(player.getUniqueId());
             player.setAllowFlight(true);
             Msg.send(player, "&aFlight has been enabled.");
         }

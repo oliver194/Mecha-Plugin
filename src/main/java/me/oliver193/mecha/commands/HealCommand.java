@@ -15,7 +15,6 @@ public class HealCommand implements CommandExecutor {
         }
 
         Player player = (Player) commandSender;
-        // Sets the players health back to full.
         player.setHealth(20);
         Msg.send(commandSender, "&aYour health is now full.");
         return true;
