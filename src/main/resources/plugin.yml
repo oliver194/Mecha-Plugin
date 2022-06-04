@@ -9,12 +9,15 @@ commands:
   heal:
     permission: mecha.heal
     description: Heal yourself.
-    usage: /heal
+    usage: /<command>
   feed:
     permission: mecha.feed
     description: Feed yourself.
-    usage: /feed
+    usage: /<command>
   fly:
     permission: mecha.fly
-    description: Enable of disable flight!
-    usage: /fly
+    description: Enable or disable flight!
+    usage: /<command>
+  mecha:
+    description: Displays information about the plugin.
+    usage: /<command>
