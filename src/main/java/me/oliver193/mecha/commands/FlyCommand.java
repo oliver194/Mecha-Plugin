@@ -23,14 +23,11 @@ public class FlyCommand implements CommandExecutor {
 
         Player player = (Player) commandSender;
         // Enable/disable fly mode
-        if (flyingPlayers.contains(player.getUniqueId())){
+        player.setAllowFlight(flyingPlayers.add(player.getUniqueId()));
+        if (player.getAllowFlight()) Msg.send(player, "&aYou can now fly!");
+        else Msg.send(player, "&cYou can no longer fly!");
+        if (!player.getAllowFlight()) {
             flyingPlayers.remove(player.getUniqueId());
-            player.setAllowFlight(false);
-            Msg.send(player, "&cFlight has been disabled.");
-        }else if (!flyingPlayers.contains(player.getUniqueId())) {
-            flyingPlayers.add(player.getUniqueId());
-            player.setAllowFlight(true);
-            Msg.send(player, "&aFlight has been enabled.");
         }
         return true;
     }
