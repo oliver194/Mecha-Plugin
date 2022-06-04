@@ -13,7 +13,9 @@ public class FeedCommand implements CommandExecutor {
             Msg.send(commandSender, "&cThis command can only be used by players.");
             return true;
         }
+
         Player player = (Player) commandSender;
+        // Gets rid of the players hunger.
         player.setFoodLevel(20);
         Msg.send(commandSender, "&aYou are no longer hungry!");
         return true;

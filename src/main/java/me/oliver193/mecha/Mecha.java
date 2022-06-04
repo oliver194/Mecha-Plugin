@@ -1,6 +1,7 @@
 package me.oliver193.mecha;
 
 import me.oliver193.mecha.commands.FeedCommand;
+import me.oliver193.mecha.commands.FlyCommand;
 import me.oliver193.mecha.commands.HealCommand;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -19,6 +20,7 @@ public class Mecha extends JavaPlugin {
         // Load commands
         getCommand("heal").setExecutor(new HealCommand());
         getCommand("feed").setExecutor(new FeedCommand());
+        getCommand("fly").setExecutor(new FlyCommand());
 
     }
 

@@ -14,3 +14,7 @@ commands:
     permission: mecha.feed
     description: Feed yourself.
     usage: /feed
+  fly:
+    permission: mecha.fly
+    description: Enable of disable flight!
+    usage: /fly
