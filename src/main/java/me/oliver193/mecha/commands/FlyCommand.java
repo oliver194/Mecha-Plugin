@@ -16,7 +16,7 @@ public class FlyCommand implements CommandExecutor {
     @Override
 
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
-        if(!(commandSender instanceof Player)) {
+        if (!(commandSender instanceof Player)) {
             Msg.send(commandSender, "&cThis command can only be used by players.");
             return true;
         }
@@ -27,7 +27,7 @@ public class FlyCommand implements CommandExecutor {
             flyingPlayers.remove(player.getUniqueId());
             player.setAllowFlight(false);
             Msg.send(player, "&cFlight has been disabled.");
-        }else if(!flyingPlayers.contains(player.getUniqueId())) {
+        }else if (!flyingPlayers.contains(player.getUniqueId())) {
             flyingPlayers.add(player.getUniqueId());
             player.setAllowFlight(true);
             Msg.send(player, "&aFlight has been enabled.");
