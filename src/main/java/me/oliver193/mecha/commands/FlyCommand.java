@@ -5,14 +5,18 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.event.player.PlayerQuitEvent;
 
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
+
 public class FlyCommand implements CommandExecutor {
 
-    private final Set<UUID> flyingPlayers = new HashSet<>();
+    public final static Set<UUID> flyingPlayers = new HashSet<>();
+
+
     @Override
 
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
@@ -30,5 +34,6 @@ public class FlyCommand implements CommandExecutor {
             flyingPlayers.remove(player.getUniqueId());
         }
         return true;
+
     }
 }

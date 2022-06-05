@@ -12,7 +12,7 @@
  *
  * Violations will result in a ban of your plugin and account from bStats.
  */
-package me.oliver193.mecha.bStats;
+package me.oliver193.mecha.bstats;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;

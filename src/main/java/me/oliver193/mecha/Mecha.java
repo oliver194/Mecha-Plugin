@@ -1,10 +1,11 @@
 package me.oliver193.mecha;
 
-import me.oliver193.mecha.bStats.Metrics;
+import me.oliver193.mecha.bstats.Metrics;
 import me.oliver193.mecha.commands.FeedCommand;
 import me.oliver193.mecha.commands.FlyCommand;
 import me.oliver193.mecha.commands.HealCommand;
 import me.oliver193.mecha.commands.MechaCommand;
+
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Mecha extends JavaPlugin {
@@ -17,7 +18,8 @@ public class Mecha extends JavaPlugin {
 
     public void onEnable() {
         // Enable plugin
-        getLogger().info("Mecha is loading.");
+        getLogger().info("Enabling");
+
 
         //Metrics from bStats
         int pluginId = 15385;
@@ -34,7 +36,7 @@ public class Mecha extends JavaPlugin {
 
     public void onDisable() {
         // Disable plugin
-        getLogger().info("Mecha is disabling.");
+        getLogger().info("Disabling");
     }
 
     public static Mecha getInstance() {
