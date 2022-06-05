@@ -29,9 +29,10 @@ public class Mecha extends JavaPlugin {
         //Load update checker
 
         new UpdateChecker(this, UpdateCheckSource.CUSTOM_URL, "https://raw.githubusercontent.com/oliver194/Mecha-Plugin/master/src/main/resources/version.txt")
-        .setDownloadLink("https://github.com/oliver194/mecha-plugin/releases")
+        .setDownloadLink("https://github.com/oliver194/Mecha-Plugin/releases")
         .setNotifyOpsOnJoin(true)
         .setUserAgent(new UserAgentBuilder().addPluginNameAndVersion())
+        .setNotifyByPermissionOnJoin("mecha.updatechecker")
         .checkEveryXHours(2) //Check every 2 hours
         .checkNow();
 
@@ -54,15 +55,6 @@ public class Mecha extends JavaPlugin {
     public void onDisable() {
         // Disable plugin
         getLogger().info("Disabling");
-    }
-
-    public void configMain() {
-        File config = new File(getDataFolder(), "config.yml");
-        this.MainConfig = config.getPath();
-        if (!config.exists()) {
-            getConfig().options().copyDefaults(true);
-            saveConfig();
-        }
     }
 
     public static Mecha getInstance() {
