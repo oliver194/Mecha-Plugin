@@ -1,10 +1,12 @@
 package me.oliver193.mecha.commands;
 
 import me.oliver193.mecha.Msg;
+import org.bukkit.Server;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerQuitEvent;
 
 import java.util.HashSet;
@@ -34,6 +36,12 @@ public class FlyCommand implements CommandExecutor {
             flyingPlayers.remove(player.getUniqueId());
         }
         return true;
+    }
 
+    @EventHandler
+    public void onDisconnect(PlayerQuitEvent e) {
+        Player p = e.getPlayer();
+        p.setAllowFlight(false);
+        flyingPlayers.remove(p.getUniqueId());
     }
 }

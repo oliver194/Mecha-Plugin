@@ -8,7 +8,10 @@ import me.oliver193.mecha.commands.MechaCommand;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.io.File;
+
 public class Mecha extends JavaPlugin {
+    public String MainConfig;
 
     private static Mecha instance;
 
@@ -37,6 +40,15 @@ public class Mecha extends JavaPlugin {
     public void onDisable() {
         // Disable plugin
         getLogger().info("Disabling");
+    }
+
+    public void configMain() {
+        File config = new File(getDataFolder(), "config.yml");
+        this.MainConfig = config.getPath();
+        if (!config.exists()) {
+            getConfig().options().copyDefaults(true);
+            saveConfig();
+        }
     }
 
     public static Mecha getInstance() {
