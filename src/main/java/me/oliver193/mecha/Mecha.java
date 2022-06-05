@@ -1,5 +1,8 @@
 package me.oliver193.mecha;
 
+import com.jeff_media.updatechecker.UpdateCheckSource;
+import com.jeff_media.updatechecker.UpdateChecker;
+import com.jeff_media.updatechecker.UserAgentBuilder;
 import me.oliver193.mecha.bstats.Metrics;
 import me.oliver193.mecha.commands.FeedCommand;
 import me.oliver193.mecha.commands.FlyCommand;
@@ -22,6 +25,17 @@ public class Mecha extends JavaPlugin {
     public void onEnable() {
         // Enable plugin
         getLogger().info("Enabling");
+
+        //Load update checker
+
+        new UpdateChecker(this, UpdateCheckSource.CUSTOM_URL, "https://raw.githubusercontent.com/oliver194/Mecha-Plugin/master/src/main/resources/version.txt")
+        .setDownloadLink("https://github.com/oliver194/mecha-plugin/releases")
+        .setNotifyOpsOnJoin(true)
+        .setUserAgent(new UserAgentBuilder().addPluginNameAndVersion())
+        .checkEveryXHours(2) //Check every 2 hours
+        .checkNow();
+
+
 
 
         //Metrics from bStats

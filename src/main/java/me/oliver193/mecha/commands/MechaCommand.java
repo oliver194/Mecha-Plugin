@@ -1,13 +1,10 @@
 package me.oliver193.mecha.commands;
 
-import me.oliver193.mecha.Mecha;
 import me.oliver193.mecha.Msg;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-
-import java.util.Locale;
 
 public class MechaCommand implements CommandExecutor {
     @Override
@@ -16,7 +13,10 @@ public class MechaCommand implements CommandExecutor {
         Msg.send(commandSender, "&7------------= &aMecha &7=------------");
         Msg.send(commandSender, "&aServer Version&f: " + Bukkit.getVersion() + " &ais installed.");
         Msg.send(commandSender, "&aAuthor&f: &aoliver193");
+        Msg.send(commandSender, "This plugin is open source! view the source code at:");
+        Msg.send(commandSender, "https://shorturl.at/pwOVW");
         Msg.send(commandSender, "&4PRE-RELEASE!!! THIS VERSION IS NOT STABLE");
+        Msg.send(commandSender, "&4NOT RECOMMENDED FOR PRODUCTION");
         return true;
     }
 }

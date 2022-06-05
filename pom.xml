@@ -6,7 +6,7 @@
 
     <groupId>me.oliver193</groupId>
     <artifactId>Mecha</artifactId>
-    <version>1.4.4-ALPHA</version>
+    <version>1.4.5-ALPHA</version>
     <packaging>jar</packaging>
 
     <name>Mecha</name>
@@ -63,6 +63,10 @@
             <id>sonatype</id>
             <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
+        <repository>
+            <id>jeff-media-public</id>
+            <url>https://hub.jeff-media.com/nexus/repository/jeff-media-public/</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -71,6 +75,12 @@
             <artifactId>spigot-api</artifactId>
             <version>1.18.2-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.jeff_media</groupId>
+            <artifactId>SpigotUpdateChecker</artifactId>
+            <version>2.3.0</version> <!-- Check on GitHub for the latest version -->
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 </project>
