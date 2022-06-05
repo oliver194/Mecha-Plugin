@@ -27,6 +27,7 @@ public class Mecha extends JavaPlugin {
         getLogger().info("Enabling");
 
         //Load update checker
+        //From: https://www.spigotmc.org/threads/spigotupdatechecker-powerful-update-checker-with-only-one-line-of-code.500010/
 
         new UpdateChecker(this, UpdateCheckSource.CUSTOM_URL, "https://raw.githubusercontent.com/oliver194/Mecha-Plugin/master/src/main/resources/version.txt")
         .setDownloadLink("https://github.com/oliver194/Mecha-Plugin/releases")
