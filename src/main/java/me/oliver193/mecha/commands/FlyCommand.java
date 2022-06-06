@@ -1,7 +1,6 @@
 package me.oliver193.mecha.commands;
 
 import me.oliver193.mecha.Msg;
-import org.bukkit.Server;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -17,7 +16,6 @@ import java.util.UUID;
 public class FlyCommand implements CommandExecutor {
 
     public final static Set<UUID> flyingPlayers = new HashSet<>();
-
 
     @Override
 

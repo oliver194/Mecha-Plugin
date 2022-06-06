@@ -8,6 +8,7 @@ import org.bukkit.entity.Player;
 
 public class HealCommand implements CommandExecutor {
     @Override
+
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
         if (!(commandSender instanceof Player)) {
             Msg.send(commandSender, "&cThis command can only be used by players.");

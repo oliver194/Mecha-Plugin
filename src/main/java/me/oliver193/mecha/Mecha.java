@@ -3,12 +3,12 @@ package me.oliver193.mecha;
 import com.jeff_media.updatechecker.UpdateCheckSource;
 import com.jeff_media.updatechecker.UpdateChecker;
 import com.jeff_media.updatechecker.UserAgentBuilder;
-import me.oliver193.mecha.bstats.Metrics;
 import me.oliver193.mecha.commands.FeedCommand;
 import me.oliver193.mecha.commands.FlyCommand;
 import me.oliver193.mecha.commands.HealCommand;
 import me.oliver193.mecha.commands.MechaCommand;
 
+import org.bstats.bukkit.Metrics;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
@@ -34,7 +34,7 @@ public class Mecha extends JavaPlugin {
         .setNotifyOpsOnJoin(true)
         .setUserAgent(new UserAgentBuilder().addPluginNameAndVersion())
         .setNotifyByPermissionOnJoin("mecha.updatechecker")
-        .checkEveryXHours(2) //Check every 2 hours
+        .checkEveryXHours(4) //Check every 4 hours for an update
         .checkNow();
 
 
