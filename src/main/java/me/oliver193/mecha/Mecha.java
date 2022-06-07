@@ -11,10 +11,7 @@ import me.oliver193.mecha.commands.MechaCommand;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.io.File;
-
 public class Mecha extends JavaPlugin {
-    public String MainConfig;
 
     private static Mecha instance;
 
